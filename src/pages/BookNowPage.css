@@ -1,0 +1,557 @@
+.book-page {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero */
+.book-hero {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  text-align: center;
+}
+
+.book-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.book-hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Content */
+.book-content {
+  padding: 60px 0;
+  background: white;
+}
+
+/* Two Methods */
+.book-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.book-form-section h2,
+.book-whatsapp-section h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.book-form-section > p,
+.book-whatsapp-section > p {
+  font-size: 14px;
+  color: var(--text-medium);
+  margin-bottom: 24px;
+}
+
+/* Form */
+.booking-form {
+  background: var(--bg-light);
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  animation: slideInLeft 0.6s ease-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideInUp 0.5s ease-out backwards;
+}
+
+.form-group:nth-child(1) input,
+.form-group:nth-child(1) select,
+.form-group:nth-child(1) textarea { animation-delay: 0.05s; }
+
+.form-group:nth-child(2) input,
+.form-group:nth-child(2) select,
+.form-group:nth-child(2) textarea { animation-delay: 0.1s; }
+
+.form-group:nth-child(3) input,
+.form-group:nth-child(3) select,
+.form-group:nth-child(3) textarea { animation-delay: 0.15s; }
+
+.form-group:nth-child(4) input,
+.form-group:nth-child(4) select,
+.form-group:nth-child(4) textarea { animation-delay: 0.2s; }
+
+.form-group:nth-child(5) input,
+.form-group:nth-child(5) select,
+.form-group:nth-child(5) textarea { animation-delay: 0.25s; }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(55, 48, 163, 0.15);
+  transform: scale(1.01);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.booking-form .btn {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.form-note {
+  font-size: 12px;
+  color: var(--text-light);
+  background: rgba(55, 48, 163, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.form-note i {
+  margin-right: 4px;
+}
+
+/* WhatsApp Section */
+.whatsapp-card {
+  display: block;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 32px;
+  border-radius: 16px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-bottom: 24px;
+  animation: slideInRight 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.whatsapp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.whatsapp-card:hover::before {
+  left: 100%;
+}
+
+.whatsapp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-content i {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.whatsapp-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.whatsapp-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+}
+
+.whatsapp-cta {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.whatsapp-info {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.whatsapp-info h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.whatsapp-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.whatsapp-info li {
+  font-size: 13px;
+  color: var(--text-medium);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whatsapp-info i {
+  color: #25D366;
+  font-size: 11px;
+}
+
+.call-option {
+  text-align: center;
+}
+
+.call-option h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-bottom: 8px;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.phone-link:hover {
+  background: var(--primary-dark);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(55, 48, 163, 0.3);
+}
+
+.call-option p {
+  font-size: 12px;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Trust Section */
+.trust-section {
+  margin-bottom: 60px;
+  padding: 40px;
+  background: var(--bg-light);
+  border-radius: 16px;
+}
+
+.trust-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--text-dark);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.trust-card {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  animation: fadeInScale 0.6s ease-out backwards;
+  transition: all 0.3s ease;
+}
+
+.trust-grid .trust-card:nth-child(1) { animation-delay: 0.1s; }
+.trust-grid .trust-card:nth-child(2) { animation-delay: 0.2s; }
+.trust-grid .trust-card:nth-child(3) { animation-delay: 0.3s; }
+.trust-grid .trust-card:nth-child(4) { animation-delay: 0.4s; }
+
+.trust-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(55, 48, 163, 0.15);
+}
+
+.trust-card i {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.trust-card:hover i {
+  transform: scale(1.15) rotate(5deg);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.trust-card i {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.trust-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.trust-card p {
+  font-size: 13px;
+  color: var(--text-medium);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* FAQ */
+.faq-section {
+  margin-bottom: 60px;
+}
+
+.faq-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--text-dark);
+}
+
+.faq-accordion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  animation: slideInUp 0.6s ease-out backwards;
+  transition: all 0.3s ease;
+}
+
+.faq-accordion .faq-item:nth-child(1) { animation-delay: 0.1s; }
+.faq-accordion .faq-item:nth-child(2) { animation-delay: 0.2s; }
+.faq-accordion .faq-item:nth-child(3) { animation-delay: 0.3s; }
+.faq-accordion .faq-item:nth-child(4) { animation-delay: 0.4s; }
+
+.faq-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 20px rgba(55, 48, 163, 0.1);
+}
+
+.faq-item h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  font-size: 13px;
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Final CTA */
+.final-cta {
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 48px 24px;
+  border-radius: 16px;
+}
+
+.final-cta h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.final-cta p {
+  font-size: 16px;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-large {
+  font-size: 16px;
+  padding: 14px 28px;
+}
+
+@media (max-width: 768px) {
+  .book-methods {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-accordion {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
