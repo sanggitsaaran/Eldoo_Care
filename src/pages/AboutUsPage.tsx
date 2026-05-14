@@ -213,7 +213,7 @@ export default function AboutUsPage() {
             <Link to="/book" className="btn btn-primary btn-large">
               <i className="fas fa-calendar-check"></i> Book Now
             </Link>
-            <a href="https://wa.me/919999999999" className="btn btn-secondary">
+            <a href="https://wa.me/919900041047" className="btn btn-secondary">
               <i className="fab fa-whatsapp"></i> Chat Now
             </a>
           </div>

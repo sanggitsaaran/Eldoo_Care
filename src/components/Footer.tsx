@@ -39,10 +39,10 @@ export default function Footer() {
         <div className="footer-column">
           <h4>Contact</h4>
           <ul>
-            <li><i className="fas fa-phone"></i> +91-9999999999</li>
-            <li><i className="fas fa-envelope"></i> hello@eldoocare.com</li>
+            <li><i className="fas fa-phone"></i> +91 99000 41047</li>
+            <li><i className="fas fa-envelope"></i> eldoocare@gmail.com</li>
             <li><i className="fas fa-map-marker-alt"></i> South India</li>
-            <li><a href="https://wa.me/919999999999" className="whatsapp-link"><i className="fab fa-whatsapp"></i> Chat Now</a></li>
+            <li><a href="https://wa.me/919900041047" className="whatsapp-link"><i className="fab fa-whatsapp"></i> Chat Now</a></li>
           </ul>
         </div>
       </div>

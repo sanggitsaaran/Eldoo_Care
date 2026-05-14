@@ -9,7 +9,8 @@ export default function Navigation() {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <i className="fas fa-heart"></i> Eldoo Care
+          <img src="/images/logo.jpeg" alt="Eldoo Care Logo" className="logo-image" />
+          <span className="logo-text">Eldoo Care</span>
         </Link>
 
         <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>

@@ -20,8 +20,8 @@ export default function PlansPage() {
           <div className="plans-grid">
             {/* Plan 1 */}
             <div className="plan-card">
+              <img src="/images/transport-service.png" alt="Move Service" className="plan-image" />
               <div className="plan-header">
-                <div className="plan-icon">🚗</div>
                 <h3>Move<br/><span>Medical Transport</span></h3>
               </div>
               <div className="plan-features">
@@ -40,8 +40,8 @@ export default function PlansPage() {
 
             {/* Plan 2 */}
             <div className="plan-card">
+              <img src="/images/home-care.png" alt="Assist Service" className="plan-image" />
               <div className="plan-header">
-                <div className="plan-icon">🤝</div>
                 <h3>Assist<br/><span>Home Care</span></h3>
               </div>
               <div className="plan-features">
@@ -60,9 +60,9 @@ export default function PlansPage() {
 
             {/* Plan 3 */}
             <div className="plan-card featured">
+              <img src="/images/care-ride.png" alt="CareRide Service" className="plan-image" />
               <div className="featured-badge">Most Popular</div>
               <div className="plan-header">
-                <div className="plan-icon">🏥</div>
                 <h3>CareRide<br/><span>Medical Escorts</span></h3>
               </div>
               <div className="plan-features">
@@ -181,7 +181,7 @@ export default function PlansPage() {
               <Link to="/book" className="btn btn-primary btn-large">
                 <i className="fas fa-calendar-check"></i> Book Now
               </Link>
-              <a href="https://wa.me/919999999999" className="btn btn-secondary">
+              <a href="https://wa.me/919900041047" className="btn btn-secondary">
                 <i className="fab fa-whatsapp"></i> Chat Now
               </a>
             </div>

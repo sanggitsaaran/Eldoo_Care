@@ -35,7 +35,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <a href="https://wa.me/919999999999" className="btn btn-secondary">
+            <a href="https://wa.me/919900041047" className="btn btn-secondary">
               <i className="fab fa-whatsapp"></i> Chat on WhatsApp
             </a>
           </div>
@@ -81,24 +81,32 @@ export default function HomePage() {
           <h2>Our Services</h2>
           <div className="services-grid">
             <div className="service-card">
-              <div className="service-icon">🚗</div>
-              <h3>Medical Transport</h3>
-              <p>Safe rides to doctors, hospitals, and clinics with trained assistance.</p>
+              <img src="/images/transport-service.png" alt="Medical Transport" className="service-card-image" />
+              <div className="service-card-content">
+                <h3>Medical Transport</h3>
+                <p>Safe rides to doctors, hospitals, and clinics with trained assistance.</p>
+              </div>
             </div>
             <div className="service-card">
-              <div className="service-icon">🤝</div>
-              <h3>Home Care</h3>
-              <p>Daily help with bathing, grooming, meals, and medications at home.</p>
+              <img src="/images/home-care.png" alt="Home Care" className="service-card-image" />
+              <div className="service-card-content">
+                <h3>Home Care</h3>
+                <p>Daily help with bathing, grooming, meals, and medications at home.</p>
+              </div>
             </div>
             <div className="service-card">
-              <div className="service-icon">🏥</div>
-              <h3>Medical Escorts</h3>
-              <p>For complex care needs — medical professionals travel with them.</p>
+              <img src="/images/care-ride.png" alt="Medical Escorts" className="service-card-image" />
+              <div className="service-card-content">
+                <h3>Medical Escorts</h3>
+                <p>For complex care needs — medical professionals travel with them.</p>
+              </div>
             </div>
             <div className="service-card">
-              <div className="service-icon">📋</div>
-              <h3>Care Management</h3>
-              <p>We handle everything — coordination, scheduling, and care planning.</p>
+              <img src="/images/care-plan.png" alt="Care Management" className="service-card-image" />
+              <div className="service-card-content">
+                <h3>Care Management</h3>
+                <p>We handle everything — coordination, scheduling, and care planning.</p>
+              </div>
             </div>
           </div>
           <Link to="/plans" className="btn btn-outline">
@@ -164,7 +172,7 @@ export default function HomePage() {
             <Link to="/book" className="btn btn-primary btn-large">
               <i className="fas fa-calendar-check"></i> Book Now
             </Link>
-            <a href="https://wa.me/919999999999" className="btn btn-secondary">
+            <a href="https://wa.me/919900041047" className="btn btn-secondary">
               <i className="fab fa-whatsapp"></i> Chat Now
             </a>
           </div>
@@ -181,7 +189,7 @@ export default function HomePage() {
             <Link to="/book" className="btn btn-primary btn-block" onClick={() => setBookingModal(false)}>
               <i className="fas fa-calendar-check"></i> Fill Form & Book
             </Link>
-            <a href="https://wa.me/919999999999" className="btn btn-secondary btn-block">
+            <a href="https://wa.me/919900041047" className="btn btn-secondary btn-block">
               <i className="fab fa-whatsapp"></i> Chat on WhatsApp
             </a>
             <p className="modal-footer">Response within minutes • No commitment needed</p>

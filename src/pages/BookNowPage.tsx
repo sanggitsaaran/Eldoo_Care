@@ -2,33 +2,13 @@ import { useState } from 'react';
 import './BookNowPage.css';
 
 export default function BookNowPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    city: '',
-    service: '',
-    notes: '',
-  });
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
   const handleSubmit = (e: any) => {
-    e.preventDefault();
-    // Here you would send the form data to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', phone: '', city: '', service: '', notes: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    // Formspree will handle the rest
+    // The form will submit to Formspree endpoint and redirect on success
   };
 
   return (
@@ -51,15 +31,18 @@ export default function BookNowPage() {
               <h2>Tell Us What You Need</h2>
               <p>Fill out the form and a care advisor will call you within the hour.</p>
 
-              <form onSubmit={handleSubmit} className="booking-form">
+              <form 
+                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                method="POST"
+                onSubmit={handleSubmit}
+                className="booking-form"
+              >
                 <div className="form-group">
                   <label htmlFor="name">Your Name *</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     placeholder="e.g., Rajesh"
                     required
                   />
@@ -71,8 +54,6 @@ export default function BookNowPage() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
                     placeholder="e.g., +91 98765 43210"
                     required
                   />
@@ -83,8 +64,6 @@ export default function BookNowPage() {
                   <select
                     id="city"
                     name="city"
-                    value={formData.city}
-                    onChange={handleChange}
                     required
                   >
                     <option value="">Select a city</option>
@@ -105,8 +84,6 @@ export default function BookNowPage() {
                   <select
                     id="service"
                     name="service"
-                    value={formData.service}
-                    onChange={handleChange}
                     required
                   >
                     <option value="">Select a service</option>
@@ -122,23 +99,14 @@ export default function BookNowPage() {
                   <textarea
                     id="notes"
                     name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
                     placeholder="e.g., Hospital appointment Tuesday morning"
                     rows={4}
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-large">
-                  <i className="fas fa-paper-plane"></i> Send My Request
+                <button type="submit" className="btn btn-primary btn-large" disabled={isSubmitting}>
+                  <i className="fas fa-paper-plane"></i> {isSubmitting ? 'Sending...' : 'Send My Request'}
                 </button>
-
-                {submitted && (
-                  <div className="success-message">
-                    <i className="fas fa-check-circle"></i>
-                    Thank you! We'll call you within the hour.
-                  </div>
-                )}
 
                 <div className="form-note">
                   <p><i className="fas fa-info-circle"></i> No contracts. No hidden fees. We'll discuss pricing on the call.</p>
@@ -151,7 +119,7 @@ export default function BookNowPage() {
               <h2>Prefer Instant Chat?</h2>
               <p>Message us on WhatsApp for real-time responses.</p>
 
-              <a href="https://wa.me/919999999999?text=Hi%20Eldoo%20Care%21%20I%20need%20help%20with%20care%20for%20my%20parent." 
+              <a href="https://wa.me/919900041047?text=Hi%20Eldoo%20Care%21%20I%20need%20help%20with%20care%20for%20my%20parent." 
                  className="whatsapp-card">
                 <div className="whatsapp-content">
                   <i className="fab fa-whatsapp"></i>
@@ -175,8 +143,8 @@ export default function BookNowPage() {
 
               <div className="call-option">
                 <h4>Or Call Us Directly</h4>
-                <a href="tel:+919999999999" className="phone-link">
-                  <i className="fas fa-phone"></i> +91 9999 999 999
+                <a href="tel:+919900041047" className="phone-link">
+                  <i className="fas fa-phone"></i> +91 99000 41047
                 </a>
                 <p>Available 24/7. We speak Hindi, Tamil, Kannada & English.</p>
               </div>
@@ -241,7 +209,7 @@ export default function BookNowPage() {
               <button className="btn btn-primary btn-large">
                 <i className="fas fa-paper-plane"></i> Submit Form Above
               </button>
-              <a href="https://wa.me/919999999999" className="btn btn-secondary">
+              <a href="https://wa.me/919900041047" className="btn btn-secondary">
                 <i className="fab fa-whatsapp"></i> Chat on WhatsApp
               </a>
             </div>
