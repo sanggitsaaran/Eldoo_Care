@@ -4,11 +4,49 @@ import './BookNowPage.css';
 export default function BookNowPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    city: '',
+    service: '',
+    notes: ''
+  });
 
-  const handleSubmit = (e: any) => {
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    // Formspree will handle the rest
-    // The form will submit to Formspree endpoint and redirect on success
+
+    try {
+      const response = await fetch('https://formspree.io/f/xkoydadn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        // Keep modal visible for 8 seconds before auto-closing
+        setTimeout(() => {
+          setFormData({ name: '', phone: '', city: '', service: '', notes: '' });
+          setSubmitted(false);
+        }, 8000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -32,8 +70,6 @@ export default function BookNowPage() {
               <p>Fill out the form and a care advisor will call you within the hour.</p>
 
               <form 
-                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-                method="POST"
                 onSubmit={handleSubmit}
                 className="booking-form"
               >
@@ -43,6 +79,8 @@ export default function BookNowPage() {
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="e.g., Rajesh"
                     required
                   />
@@ -54,6 +92,8 @@ export default function BookNowPage() {
                     type="tel"
                     id="phone"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="e.g., +91 98765 43210"
                     required
                   />
@@ -64,6 +104,8 @@ export default function BookNowPage() {
                   <select
                     id="city"
                     name="city"
+                    value={formData.city}
+                    onChange={handleChange}
                     required
                   >
                     <option value="">Select a city</option>
@@ -84,6 +126,8 @@ export default function BookNowPage() {
                   <select
                     id="service"
                     name="service"
+                    value={formData.service}
+                    onChange={handleChange}
                     required
                   >
                     <option value="">Select a service</option>
@@ -99,6 +143,8 @@ export default function BookNowPage() {
                   <textarea
                     id="notes"
                     name="notes"
+                    value={formData.notes}
+                    onChange={handleChange}
                     placeholder="e.g., Hospital appointment Tuesday morning"
                     rows={4}
                   ></textarea>
@@ -216,6 +262,66 @@ export default function BookNowPage() {
           </div>
         </div>
       </section>
+
+      {/* Success Modal */}
+      {submitted && (
+        <div className="modal-overlay" onClick={() => setSubmitted(false)}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="modal-close-btn" 
+              onClick={() => setSubmitted(false)}
+              title="Close"
+            >
+              <i className="fas fa-times"></i>
+            </button>
+            
+            <div className="modal-header">
+              <i className="fas fa-check-circle"></i>
+              <h2>Booking Successful! ✨</h2>
+            </div>
+            
+            <div className="modal-content">
+              <p className="success-message">Thank you for choosing Eldoo Care!</p>
+              <p className="info-text">Your care advisor will call you within the hour at the number you provided.</p>
+              
+              <div className="booking-summary">
+                <h3>Your Request Summary</h3>
+                <div className="summary-item">
+                  <span className="label">Name:</span>
+                  <span className="value">{formData.name}</span>
+                </div>
+                <div className="summary-item">
+                  <span className="label">Phone:</span>
+                  <span className="value">{formData.phone}</span>
+                </div>
+                <div className="summary-item">
+                  <span className="label">City:</span>
+                  <span className="value">{formData.city.charAt(0).toUpperCase() + formData.city.slice(1)}</span>
+                </div>
+                <div className="summary-item">
+                  <span className="label">Service:</span>
+                  <span className="value">
+                    {formData.service === 'move' && 'Move - Medical Transport'}
+                    {formData.service === 'assist' && 'Assist - Home Care'}
+                    {formData.service === 'careride' && 'CareRide - Medical Escorts'}
+                    {formData.service === 'careplan' && 'CarePlan - Full Coordination'}
+                  </span>
+                </div>
+                {formData.notes && (
+                  <div className="summary-item">
+                    <span className="label">Additional Notes:</span>
+                    <span className="value">{formData.notes}</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="modal-actions">
+                <p className="closing-message">We look forward to serving you!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
