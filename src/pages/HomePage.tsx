@@ -46,30 +46,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us - Simple & Concise */}
-      <section className="why-section">
+      {/* Eldoo Intro - Value Proposition */}
+      <section className="intro-section">
+        <div className="container">
+          <div className="intro-content">
+            <h2>Eldoo Care: Your Parents' Care, Reimagined</h2>
+            <p>Eldoo puts a dedicated care team on the ground in India — so your parents get safe medical transport, trusted daily care, and a human who truly looks after them. You get peace of mind, real-time updates, and one number to call.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Markers - Replace Why Choose Us */}
+      <section className="trust-section">
         <div className="container">
           <h2>Why Families Trust Eldoo Care</h2>
-          <div className="why-grid">
-            <div className="why-card">
-              <i className="fas fa-check-circle"></i>
-              <h3>Professional Care</h3>
-              <p>Every caregiver is trained, verified, and monitored for your peace of mind.</p>
+          <div className="trust-grid">
+            <div className="trust-card">
+              <h3>✓ Verified & Trained</h3>
+              <p>Every caregiver is police-verified, health-screened, and trained in elder-specific care protocols.</p>
             </div>
-            <div className="why-card">
-              <i className="fas fa-shield-alt"></i>
-              <h3>Your Safety First</h3>
-              <p>Real-time updates and consistent schedules so you always know they're safe.</p>
+            <div className="trust-card">
+              <h3>✓ Full Transparency</h3>
+              <p>Daily updates, visit photos, and a live care log shared with the family — no guesswork.</p>
             </div>
-            <div className="why-card">
-              <i className="fas fa-heart"></i>
-              <h3>Human Touch</h3>
-              <p>Professional healthcare with genuine warmth and respect for your parents.</p>
+            <div className="trust-card">
+              <h3>✓ Flexible & No Lock-in</h3>
+              <p>Pause, upgrade, or cancel your plan at any time. Switch caregivers within 48 hours if needed.</p>
             </div>
-            <div className="why-card">
-              <i className="fas fa-phone"></i>
-              <h3>Always Available</h3>
-              <p>24/7 support. Reach us by phone, WhatsApp, or our app — whatever works for you.</p>
+            <div className="trust-card">
+              <h3>✓ Built for NRI Families</h3>
+              <p>Time-zone friendly briefings, international payments, and a care manager who is your proxy in India.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How to Avail Service - 4-Step Timeline */}
+      <section className="avail-service-section">
+        <div className="container">
+          <h2>How to Avail Service</h2>
+          <div className="timeline-grid">
+            <div className="timeline-card">
+              <div className="timeline-day">Day 1 - 30 mins</div>
+              <h3>Tell Us About Your Parent</h3>
+              <p>A free call with a care manager. No forms, no jargon — just an honest conversation about what your parent needs.</p>
+            </div>
+            <div className="timeline-card">
+              <div className="timeline-day">Day 1-2 - Matched for you</div>
+              <h3>We Build Your Care Team</h3>
+              <p>We assign a dedicated care manager and a verified caregiver matched to your parent's personality, language, and needs.</p>
+            </div>
+            <div className="timeline-card">
+              <div className="timeline-day">Day 2 - First visit</div>
+              <h3>Care Begins at Home</h3>
+              <p>Your caregiver arrives, meets your parent, and starts the care plan. You get a confirmation with photos and a first report.</p>
+            </div>
+            <div className="timeline-card">
+              <div className="timeline-day">Ongoing - Every day</div>
+              <h3>You Stay Informed, Always</h3>
+              <p>Daily updates, weekly family briefings, and a care manager you can reach on WhatsApp or call — whenever you need.</p>
             </div>
           </div>
         </div>
@@ -112,6 +147,26 @@ export default function HomePage() {
           <Link to="/plans" className="btn btn-outline">
             See All Plans & Pricing
           </Link>
+        </div>
+      </section>
+
+      {/* Priya's Testimonial - Credential Section */}
+      <section className="credential-section">
+        <div className="container">
+          <div className="credential-card">
+            <div className="credential-header">
+              <p className="credential-label">Book Now Tab Could Include a Credential - Enables More Confidence</p>
+            </div>
+            <div className="credential-content">
+              <blockquote>
+                <p>"Within two days of calling Eldoo, there was a caregiver with my mother in Chennai. I got a photo and a voice note that same evening. For the first time in three years, I slept without worrying."</p>
+                <footer>— Priya, based in Toronto, mother cared for in Chennai</footer>
+              </blockquote>
+              <Link to="/book" className="btn btn-primary">
+                BOOK NOW
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

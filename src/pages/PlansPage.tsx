@@ -1,188 +1,290 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './PlansPage.css';
 
 export default function PlansPage() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
   return (
     <div className="plans-page">
+      {/* Hero Section */}
       <section className="plans-hero">
         <div className="container">
-          <h1>Simple Plans for Every Need</h1>
-          <p>Choose what fits your family. Scale up anytime as needs change.</p>
+          <h1>Plans Built for Indian Families</h1>
+          <p>From wellness calls to full-time care. Choose your plan. Scale up anytime.</p>
         </div>
       </section>
 
       <section className="plans-content">
         <div className="container">
-          <div className="plans-intro">
-            <p>Our four service pillars cover everything from hospital rides to daily home care. Pick one or combine them.</p>
-          </div>
-
-          <div className="plans-grid">
-            {/* Plan 1 */}
-            <div className="plan-card">
-              <img src="/images/transport-service.png" alt="Move Service" className="plan-image" />
-              <div className="plan-header">
-                <h3>Move<br/><span>Medical Transport</span></h3>
-              </div>
-              <div className="plan-features">
-                <ul>
-                  <li><i className="fas fa-check"></i> Safe rides to hospitals & clinics</li>
-                  <li><i className="fas fa-check"></i> Trained drivers assist at every step</li>
-                  <li><i className="fas fa-check"></i> On-demand or scheduled</li>
-                  <li><i className="fas fa-check"></i> Real-time tracking</li>
+          {/* Subscription Plans Section */}
+          <section className="subscription-plans-section">
+            <h2>Subscription Plans</h2>
+            <p className="section-subtitle">Monthly plans that scale with your parent's changing needs</p>
+            <div className="subscription-grid">
+              {/* Companion Plan */}
+              <div className="subscription-card">
+                <div className="plan-name">Companion</div>
+                <div className="plan-price">
+                  <span className="price">₹3,999</span>
+                  <span className="period">/month</span>
+                </div>
+                <div className="plan-savings">Save ₹7,200/yr</div>
+                <ul className="plan-features">
+                  <li>✓ Wellness calls 3x/week</li>
+                  <li>✓ Medication reminders</li>
+                  <li>✓ Monthly health summary</li>
+                  <li>✓ 2 escort trips</li>
+                  <li>✓ Pharmacy runs</li>
                 </ul>
+                <Link to="/book" className="btn btn-primary">Start Plan</Link>
               </div>
-              <div className="plan-cta">
-                <p className="price">Starting from ₹250/ride</p>
-                <Link to="/book" className="btn btn-primary">Book Now</Link>
-              </div>
-            </div>
 
-            {/* Plan 2 */}
-            <div className="plan-card">
-              <img src="/images/home-care.png" alt="Assist Service" className="plan-image" />
-              <div className="plan-header">
-                <h3>Assist<br/><span>Home Care</span></h3>
-              </div>
-              <div className="plan-features">
-                <ul>
-                  <li><i className="fas fa-check"></i> Daily bathing & grooming help</li>
-                  <li><i className="fas fa-check"></i> Meal prep & medication reminders</li>
-                  <li><i className="fas fa-check"></i> Mobility assistance</li>
-                  <li><i className="fas fa-check"></i> Same caregiver, every visit</li>
+              {/* Caregiver Plan */}
+              <div className="subscription-card featured">
+                <div className="plan-badge">Most Popular</div>
+                <div className="plan-name">Caregiver</div>
+                <div className="plan-price">
+                  <span className="price">₹8,999</span>
+                  <span className="period">/month</span>
+                </div>
+                <div className="plan-savings">Save ₹16,200/yr</div>
+                <ul className="plan-features">
+                  <li>✓ Daily wellness calls</li>
+                  <li>✓ Vitals monitoring (BP, sugar, SpO2)</li>
+                  <li>✓ Weekly health reports</li>
+                  <li>✓ 4 escort trips</li>
+                  <li>✓ 2 pharmacy runs</li>
+                  <li>✓ 4 hrs/day caregiver (6 days/week)</li>
+                  <li>✓ 1 home nurse visit/month</li>
+                  <li>✓ Dedicated care manager</li>
                 </ul>
+                <Link to="/book" className="btn btn-primary">Start Plan</Link>
               </div>
-              <div className="plan-cta">
-                <p className="price">₹800 - 1,200/day</p>
-                <Link to="/book" className="btn btn-primary">Book Now</Link>
-              </div>
-            </div>
 
-            {/* Plan 3 */}
-            <div className="plan-card featured">
-              <img src="/images/care-ride.png" alt="CareRide Service" className="plan-image" />
-              <div className="featured-badge">Most Popular</div>
-              <div className="plan-header">
-                <h3>CareRide<br/><span>Medical Escorts</span></h3>
-              </div>
-              <div className="plan-features">
-                <ul>
-                  <li><i className="fas fa-check"></i> Medical professional travels with them</li>
-                  <li><i className="fas fa-check"></i> Post-surgery & emergency transfers</li>
-                  <li><i className="fas fa-check"></i> Complex care situations</li>
-                  <li><i className="fas fa-check"></i> Equipped vehicles</li>
+              {/* Guardian Plan */}
+              <div className="subscription-card">
+                <div className="plan-name">Guardian</div>
+                <div className="plan-price">
+                  <span className="price">₹17,999</span>
+                  <span className="period">/month</span>
+                </div>
+                <div className="plan-savings">Save ₹32,400/yr</div>
+                <ul className="plan-features">
+                  <li>✓ Daily wellness calls + as-needed</li>
+                  <li>✓ Daily vitals tracking</li>
+                  <li>✓ Weekly reports + real-time alerts</li>
+                  <li>✓ 8 escort trips</li>
+                  <li>✓ Unlimited pharmacy runs</li>
+                  <li>✓ Emergency ambulance coordination</li>
+                  <li>✓ 8 hrs/day caregiver (7 days/week)</li>
+                  <li>✓ 4 home nurse visits/month</li>
+                  <li>✓ Senior care manager (priority)</li>
+                  <li>✓ Hospital admission support</li>
+                  <li>✓ Centralized digital health records</li>
                 </ul>
-              </div>
-              <div className="plan-cta">
-                <p className="price">Starting from ₹1,200/ride</p>
-                <Link to="/book" className="btn btn-primary">Book Now</Link>
+                <Link to="/book" className="btn btn-primary">Start Plan</Link>
               </div>
             </div>
+          </section>
 
-            {/* Plan 4 */}
-            <div className="plan-card">
-              <div className="plan-header">
-                <div className="plan-icon">📋</div>
-                <h3>CarePlan<br/><span>Full Coordination</span></h3>
+          {/* Individual Plans Section */}
+          <section className="individual-plans-section">
+            <h2>Individual Services</h2>
+            <p className="section-subtitle">Book individual services without a monthly plan</p>
+            <div className="individual-grid">
+              {/* Medical Escort */}
+              <div className="individual-card">
+                <h3>Medical Escort</h3>
+                <p>Full visit escort - drop, wait during appointment, return home. Prescription collection included.</p>
+                <Link to="/book" className="btn btn-outline">Book Now</Link>
               </div>
-              <div className="plan-features">
-                <ul>
-                  <li><i className="fas fa-check"></i> Complete care planning</li>
-                  <li><i className="fas fa-check"></i> Coordinate transport + home care</li>
-                  <li><i className="fas fa-check"></i> Dedicated care manager</li>
-                  <li><i className="fas fa-check"></i> Health check-ins included</li>
-                </ul>
+
+              {/* Pharmacy & Errand Run */}
+              <div className="individual-card">
+                <h3>Pharmacy & Errand Run</h3>
+                <p>Collection and delivery of prescriptions, medicines, or medical supplies. Confirmation sent to family.</p>
+                <Link to="/book" className="btn btn-outline">Book Now</Link>
               </div>
-              <div className="plan-cta">
-                <p className="price">Custom pricing</p>
-                <Link to="/book" className="btn btn-primary">Discuss</Link>
+
+              {/* Caregiver Visit */}
+              <div className="individual-card">
+                <h3>Caregiver Visit</h3>
+                <p>Full-day support covering all daily activities, meals, medication, light housekeeping, and companionship.</p>
+                <Link to="/book" className="btn btn-outline">Book Now</Link>
+              </div>
+
+              {/* Long-term Caregiver */}
+              <div className="individual-card">
+                <h3>Long-term Caregiver</h3>
+                <p>Night support for elders needing movement assistance, medication, or reassurance through multiple days.</p>
+                <Link to="/book" className="btn btn-outline">Book Now</Link>
+              </div>
+
+              {/* Home Nurse Visit */}
+              <div className="individual-card">
+                <h3>Home Nurse Visit</h3>
+                <p>Certified nurse for injections, wound dressing, IV management, catheter care, or vitals monitoring.</p>
+                <Link to="/book" className="btn btn-outline">Book Now</Link>
+              </div>
+
+              {/* Doctor Home Visit */}
+              <div className="individual-card">
+                <h3>Doctor Home Visit</h3>
+                <p>MBBS physician for consultation, diagnosis, prescription, or chronic illness review - at your parent's home.</p>
+                <Link to="/book" className="btn btn-outline">Book Now</Link>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* Flexible Frequency */}
-          <div className="flexibility-section">
-            <h2>Choose Your Frequency</h2>
-            <div className="flexibility-options">
-              <div className="option">
-                <strong>One-Time</strong>
-                <p>Book as needed</p>
+          {/* Promises Section */}
+          <section className="promises-section">
+            <h2>Our Promises to You</h2>
+            <div className="promises-grid">
+              <div className="promise-card">
+                <div className="promise-number">1</div>
+                <h3>You will know your caregiver before they meet your parent</h3>
+                <p>Share full profile, photo, background check, languages. Request different match anytime.</p>
               </div>
-              <div className="option">
-                <strong>Weekly</strong>
-                <p>Regular schedule</p>
+
+              <div className="promise-card">
+                <div className="promise-number">2</div>
+                <h3>You will receive a report after every single visit</h3>
+                <p>Written update sent same day for all visits (companion calls, hospital escorts, etc.)</p>
               </div>
-              <div className="option">
-                <strong>Daily</strong>
-                <p>Consistent care</p>
+
+              <div className="promise-card">
+                <div className="promise-number">3</div>
+                <h3>Your emergencies reach a real human</h3>
+                <p>24/7 line connects directly to trained care coordinator. No IVR, real person answers within 3 rings.</p>
               </div>
-              <div className="option">
-                <strong>Monthly</strong>
-                <p>Fixed plan</p>
+
+              <div className="promise-card">
+                <div className="promise-number">4</div>
+                <h3>We replace any caregiver within 48 hours</h3>
+                <p>If parent uncomfortable for any reason, replacement with 48 hours notice, no questions asked.</p>
+              </div>
+
+              <div className="promise-card">
+                <div className="promise-number">5</div>
+                <h3>No surprise charges, ever</h3>
+                <p>Published prices. Any additional cost discussed before incurred.</p>
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* What's Included */}
-          <div className="included-section">
-            <h2>What's Always Included</h2>
-            <div className="included-grid">
-              <div className="included-item">
-                <i className="fas fa-mobile-alt"></i>
-                <h4>WhatsApp Booking</h4>
-                <p>Instant requests on the app you use daily</p>
-              </div>
-              <div className="included-item">
-                <i className="fas fa-bell"></i>
-                <h4>Real-Time Updates</h4>
-                <p>Know when they're on the way & when they arrive</p>
-              </div>
-              <div className="included-item">
-                <i className="fas fa-user-check"></i>
-                <h4>Verified Professionals</h4>
-                <p>Background-checked, trained, and monitored</p>
-              </div>
-              <div className="included-item">
-                <i className="fas fa-shield-alt"></i>
-                <h4>Safety First</h4>
-                <p>We handle all the safety protocols</p>
-              </div>
-            </div>
-          </div>
-
-          {/* FAQ Simple */}
-          <div className="faq-section">
-            <h2>Quick Answers</h2>
-            <div className="faq-grid">
+          {/* FAQs Section */}
+          <section className="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-items">
+              {/* FAQ 1 */}
               <div className="faq-item">
-                <h4>Can I change plans anytime?</h4>
-                <p>Yes. No long-term contracts. Adjust or pause whenever you need.</p>
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === 0 ? null : 0)}
+                >
+                  <span>Can I speak to a care manager before committing?</span>
+                  <span className={`faq-toggle ${activeFaq === 0 ? 'active' : ''}`}>+</span>
+                </button>
+                {activeFaq === 0 && (
+                  <div className="faq-answer">
+                    <p>Yes - always. Every family starts with a free 30-min call with a care manager. No paperwork, no payment, no pressure.</p>
+                  </div>
+                )}
               </div>
+
+              {/* FAQ 2 */}
               <div className="faq-item">
-                <h4>How quickly can you send someone?</h4>
-                <p>Within 30 minutes for urgent needs in most areas. We're fast.</p>
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === 1 ? null : 1)}
+                >
+                  <span>What if the caregiver and my parent don't get along?</span>
+                  <span className={`faq-toggle ${activeFaq === 1 ? 'active' : ''}`}>+</span>
+                </button>
+                {activeFaq === 1 && (
+                  <div className="faq-answer">
+                    <p>We replace them within 48 hours, no questions asked. Finding the right match sometimes takes one or two tries.</p>
+                  </div>
+                )}
               </div>
+
+              {/* FAQ 3 */}
               <div className="faq-item">
-                <h4>What if I need care outside our cities?</h4>
-                <p>Tell us. We're expanding rapidly and may already cover your area.</p>
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === 2 ? null : 2)}
+                >
+                  <span>How do I know what's happening on a daily basis?</span>
+                  <span className={`faq-toggle ${activeFaq === 2 ? 'active' : ''}`}>+</span>
+                </button>
+                {activeFaq === 2 && (
+                  <div className="faq-answer">
+                    <p>Every visit generates a written update sent to the family - activity, mood, medication, any concerns. Plan subscribers also receive weekly health summaries and video briefings.</p>
+                  </div>
+                )}
               </div>
+
+              {/* FAQ 4 */}
               <div className="faq-item">
-                <h4>Do you offer long-term contracts?</h4>
-                <p>No. Pay for what you use. Some families save with 6-month plans though.</p>
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === 3 ? null : 3)}
+                >
+                  <span>What happens in a medical emergency?</span>
+                  <span className={`faq-toggle ${activeFaq === 3 ? 'active' : ''}`}>+</span>
+                </button>
+                {activeFaq === 3 && (
+                  <div className="faq-answer">
+                    <p>Our 24/7 line connects directly to a care coordinator - not an IVR. We dispatch help, coordinate with nearest hospital, notify family in real time. You are never the last to know.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* FAQ 5 */}
+              <div className="faq-item">
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === 4 ? null : 4)}
+                >
+                  <span>Is there a minimum contract period?</span>
+                  <span className={`faq-toggle ${activeFaq === 4 ? 'active' : ''}`}>+</span>
+                </button>
+                {activeFaq === 4 && (
+                  <div className="faq-answer">
+                    <p>No. Monthly plans can be cancelled with 7 days' notice. Individual services have no commitment at all.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* FAQ 6 */}
+              <div className="faq-item">
+                <button 
+                  className="faq-question"
+                  onClick={() => setActiveFaq(activeFaq === 5 ? null : 5)}
+                >
+                  <span>Can I pay from outside India?</span>
+                  <span className={`faq-toggle ${activeFaq === 5 ? 'active' : ''}`}>+</span>
+                </button>
+                {activeFaq === 5 && (
+                  <div className="faq-answer">
+                    <p>Yes. We accept international wire transfers and debit cards, and UPI for families in India. Invoices in INR, currency conversion at bank's rate.</p>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* CTA */}
+          {/* CTA Section */}
           <div className="plans-cta">
-            <h2>Ready to Start?</h2>
-            <p>Book your first care session or chat with our care advisors</p>
+            <h2>Ready to Get Started?</h2>
+            <p>Book your first service or chat with our care advisors</p>
             <div className="cta-buttons">
               <Link to="/book" className="btn btn-primary btn-large">
-                <i className="fas fa-calendar-check"></i> Book Now
+                Book Now
               </Link>
               <a href="https://wa.me/919900041047" className="btn btn-secondary">
-                <i className="fab fa-whatsapp"></i> Chat Now
+                Chat on WhatsApp
               </a>
             </div>
           </div>

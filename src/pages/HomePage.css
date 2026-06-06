@@ -190,7 +190,235 @@
 }
 
 /* ============================================
-   WHY SECTION
+   INTRO SECTION - Value Proposition
+   ============================================ */
+
+.intro-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(0, 168, 157, 0.1) 100%);
+  border-bottom: 2px solid var(--border);
+}
+
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  animation: slideInDown 0.8s ease-out;
+}
+
+.intro-section p {
+  font-size: 18px;
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-weight: 500;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+/* ============================================
+   TRUST SECTION - 4 Trust Markers
+   ============================================ */
+
+.trust-section {
+  padding: 80px 0;
+  background: var(--bg-white);
+}
+
+.trust-section h2 {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--primary-dark);
+  letter-spacing: -0.5px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.trust-card {
+  text-align: left;
+  padding: 36px 28px;
+  border-radius: 16px;
+  background: var(--bg-light);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid var(--border);
+  animation: fadeInScale 0.6s ease-out backwards;
+  position: relative;
+}
+
+.trust-card:nth-child(1) { animation-delay: 0.1s; }
+.trust-card:nth-child(2) { animation-delay: 0.2s; }
+.trust-card:nth-child(3) { animation-delay: 0.3s; }
+.trust-card:nth-child(4) { animation-delay: 0.4s; }
+
+.trust-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 50px rgba(0, 168, 157, 0.15);
+  border-color: var(--accent);
+  background: white;
+}
+
+.trust-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-card p {
+  font-size: 14px;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* ============================================
+   AVAIL SERVICE SECTION - 4-Step Timeline
+   ============================================ */
+
+.avail-service-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(0, 168, 157, 0.05) 0%, rgba(0, 58, 122, 0.05) 100%);
+}
+
+.avail-service-section h2 {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--primary-dark);
+  letter-spacing: -0.5px;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+}
+
+.timeline-card {
+  padding: 40px 32px;
+  background: white;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideInUp 0.6s ease-out backwards;
+  position: relative;
+}
+
+.timeline-card:nth-child(1) { animation-delay: 0.1s; }
+.timeline-card:nth-child(2) { animation-delay: 0.2s; }
+.timeline-card:nth-child(3) { animation-delay: 0.3s; }
+.timeline-card:nth-child(4) { animation-delay: 0.4s; }
+
+.timeline-card:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 58, 122, 0.15);
+  border-color: var(--accent);
+}
+
+.timeline-day {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--primary-dark);
+}
+
+.timeline-card p {
+  font-size: 14px;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+/* ============================================
+   CREDENTIAL SECTION - Testimonial Highlight
+   ============================================ */
+
+.credential-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--accent) 0%, #006B65 100%);
+}
+
+.credential-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 168, 157, 0.3);
+  animation: fadeInScale 0.8s ease-out;
+}
+
+.credential-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  padding: 20px;
+  text-align: center;
+}
+
+.credential-label {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.credential-content {
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.credential-content blockquote {
+  margin: 0 0 32px 0;
+}
+
+.credential-content blockquote p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+  font-style: italic;
+}
+
+.credential-content blockquote footer {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.credential-content .btn {
+  margin-top: 24px;
+}
+
+/* ============================================
+   WHY SECTION (Legacy - keeping for reference)
    ============================================ */
 
 .why-section {
@@ -537,6 +765,29 @@
     font-size: 36px;
   }
 
+  .intro-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .intro-section p {
+    font-size: 16px;
+  }
+
+  .trust-section h2,
+  .avail-service-section h2,
+  .why-section h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .trust-grid,
+  .timeline-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .coverage-content {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -552,6 +803,14 @@
 
   .cta-buttons {
     flex-direction: column;
+  }
+
+  .credential-content {
+    padding: 32px 20px;
+  }
+
+  .credential-content blockquote p {
+    font-size: 16px;
   }
 }
 
