@@ -29,10 +29,10 @@ export default function Footer() {
         <div className="footer-column">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#services">Move - Medical Transport</a></li>
-            <li><a href="#services">Assist - Home Care</a></li>
-            <li><a href="#services">CareRide - Medical Escorts</a></li>
-            <li><a href="#services">CarePlan - Coordinated Care</a></li>
+            <li><Link to="/plans">Medical Escort</Link></li>
+            <li><Link to="/plans">Caregiver Visit</Link></li>
+            <li><Link to="/plans">Home Nurse Visit</Link></li>
+            <li><Link to="/plans">Doctor Home Visit</Link></li>
           </ul>
         </div>
 

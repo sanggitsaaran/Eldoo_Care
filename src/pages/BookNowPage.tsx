@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import './BookNowPage.css';
 
 export default function BookNowPage() {
+  const [searchParams] = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -11,6 +13,16 @@ export default function BookNowPage() {
     service: '',
     notes: ''
   });
+
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam) {
+      setFormData(prev => ({
+        ...prev,
+        service: serviceParam
+      }));
+    }
+  }, [searchParams]);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -131,10 +143,19 @@ export default function BookNowPage() {
                     required
                   >
                     <option value="">Select a service</option>
-                    <option value="move">Move - Medical Transport</option>
-                    <option value="assist">Assist - Home Care</option>
-                    <option value="careride">CareRide - Medical Escorts</option>
-                    <option value="careplan">CarePlan - Full Coordination</option>
+                    <optgroup label="Monthly Subscription Plans">
+                      <option value="companion">Companion Plan (₹3,999/mo)</option>
+                      <option value="caregiver">Caregiver Plan (₹8,999/mo)</option>
+                      <option value="guardian">Guardian Plan (₹17,999/mo)</option>
+                    </optgroup>
+                    <optgroup label="Individual Services">
+                      <option value="medical_escort">Medical Escort</option>
+                      <option value="pharmacy_errand">Pharmacy & Errand Run</option>
+                      <option value="caregiver_visit">Caregiver Visit</option>
+                      <option value="long_term_caregiver">Long-term Caregiver Support</option>
+                      <option value="home_nurse">Home Nurse Visit</option>
+                      <option value="doctor_visit">Doctor Home Visit</option>
+                    </optgroup>
                   </select>
                 </div>
 
@@ -301,10 +322,15 @@ export default function BookNowPage() {
                 <div className="summary-item">
                   <span className="label">Service:</span>
                   <span className="value">
-                    {formData.service === 'move' && 'Move - Medical Transport'}
-                    {formData.service === 'assist' && 'Assist - Home Care'}
-                    {formData.service === 'careride' && 'CareRide - Medical Escorts'}
-                    {formData.service === 'careplan' && 'CarePlan - Full Coordination'}
+                    {formData.service === 'companion' && 'Companion Subscription Plan (₹3,999/mo)'}
+                    {formData.service === 'caregiver' && 'Caregiver Subscription Plan (₹8,999/mo)'}
+                    {formData.service === 'guardian' && 'Guardian Subscription Plan (₹17,999/mo)'}
+                    {formData.service === 'medical_escort' && 'Medical Escort'}
+                    {formData.service === 'pharmacy_errand' && 'Pharmacy & Errand Run'}
+                    {formData.service === 'caregiver_visit' && 'Caregiver Visit'}
+                    {formData.service === 'long_term_caregiver' && 'Long-term Caregiver Support'}
+                    {formData.service === 'home_nurse' && 'Home Nurse Visit'}
+                    {formData.service === 'doctor_visit' && 'Doctor Home Visit'}
                   </span>
                 </div>
                 {formData.notes && (

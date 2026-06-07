@@ -13,7 +13,7 @@ export default function HomePage() {
           <div className="hero-content">
             <h1>Your Parents Deserve Care That Feels Like Home</h1>
             <p>From hospital visits to daily care — we're there at every step. Safe, reliable, always dependable.</p>
-            
+
             {/* Prominent Booking CTA - Like Swiggy's food ordering */}
             <div className="quick-book-section">
               <button className="btn btn-primary btn-large" onClick={() => setBookingModal(true)}>
@@ -130,7 +130,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="service-card">
-              <img src="/images/care-ride.png" alt="Medical Escorts" className="service-card-image" />
+              <img src="/images/Med-esc.png" alt="Medical Escorts" className="service-card-image" />
               <div className="service-card-content">
                 <h3>Medical Escorts</h3>
                 <p>For complex care needs — medical professionals travel with them.</p>
@@ -155,7 +155,7 @@ export default function HomePage() {
         <div className="container">
           <div className="credential-card">
             <div className="credential-header">
-              <p className="credential-label">Book Now Tab Could Include a Credential - Enables More Confidence</p>
+              <p className="credential-label">Verified Trust</p>
             </div>
             <div className="credential-content">
               <blockquote>
@@ -183,7 +183,7 @@ export default function HomePage() {
             <div className="testimonial-card">
               <div className="stars">⭐⭐⭐⭐⭐</div>
               <p>"I live in Singapore. Knowing Eldoo Care is with Mom gives me peace I haven't felt in years."</p>
-              <strong>— Priya S., Chennai</strong>
+              <strong>— Saritha R., Chennai</strong>
             </div>
             <div className="testimonial-card">
               <div className="stars">⭐⭐⭐⭐⭐</div>

@@ -37,7 +37,7 @@ export default function PlansPage() {
                   <li>✓ 2 escort trips</li>
                   <li>✓ Pharmacy runs</li>
                 </ul>
-                <Link to="/book" className="btn btn-primary">Start Plan</Link>
+                <Link to="/book?service=companion" className="btn btn-primary">Start Plan</Link>
               </div>
 
               {/* Caregiver Plan */}
@@ -59,7 +59,7 @@ export default function PlansPage() {
                   <li>✓ 1 home nurse visit/month</li>
                   <li>✓ Dedicated care manager</li>
                 </ul>
-                <Link to="/book" className="btn btn-primary">Start Plan</Link>
+                <Link to="/book?service=caregiver" className="btn btn-primary">Start Plan</Link>
               </div>
 
               {/* Guardian Plan */}
@@ -83,7 +83,7 @@ export default function PlansPage() {
                   <li>✓ Hospital admission support</li>
                   <li>✓ Centralized digital health records</li>
                 </ul>
-                <Link to="/book" className="btn btn-primary">Start Plan</Link>
+                <Link to="/book?service=guardian" className="btn btn-primary">Start Plan</Link>
               </div>
             </div>
           </section>
@@ -97,42 +97,42 @@ export default function PlansPage() {
               <div className="individual-card">
                 <h3>Medical Escort</h3>
                 <p>Full visit escort - drop, wait during appointment, return home. Prescription collection included.</p>
-                <Link to="/book" className="btn btn-outline">Book Now</Link>
+                <Link to="/book?service=medical_escort" className="btn btn-outline">Book Now</Link>
               </div>
 
               {/* Pharmacy & Errand Run */}
               <div className="individual-card">
                 <h3>Pharmacy & Errand Run</h3>
                 <p>Collection and delivery of prescriptions, medicines, or medical supplies. Confirmation sent to family.</p>
-                <Link to="/book" className="btn btn-outline">Book Now</Link>
+                <Link to="/book?service=pharmacy_errand" className="btn btn-outline">Book Now</Link>
               </div>
 
               {/* Caregiver Visit */}
               <div className="individual-card">
                 <h3>Caregiver Visit</h3>
                 <p>Full-day support covering all daily activities, meals, medication, light housekeeping, and companionship.</p>
-                <Link to="/book" className="btn btn-outline">Book Now</Link>
+                <Link to="/book?service=caregiver_visit" className="btn btn-outline">Book Now</Link>
               </div>
 
               {/* Long-term Caregiver */}
               <div className="individual-card">
                 <h3>Long-term Caregiver</h3>
                 <p>Night support for elders needing movement assistance, medication, or reassurance through multiple days.</p>
-                <Link to="/book" className="btn btn-outline">Book Now</Link>
+                <Link to="/book?service=long_term_caregiver" className="btn btn-outline">Book Now</Link>
               </div>
 
               {/* Home Nurse Visit */}
               <div className="individual-card">
                 <h3>Home Nurse Visit</h3>
                 <p>Certified nurse for injections, wound dressing, IV management, catheter care, or vitals monitoring.</p>
-                <Link to="/book" className="btn btn-outline">Book Now</Link>
+                <Link to="/book?service=home_nurse" className="btn btn-outline">Book Now</Link>
               </div>
 
               {/* Doctor Home Visit */}
               <div className="individual-card">
                 <h3>Doctor Home Visit</h3>
                 <p>MBBS physician for consultation, diagnosis, prescription, or chronic illness review - at your parent's home.</p>
-                <Link to="/book" className="btn btn-outline">Book Now</Link>
+                <Link to="/book?service=doctor_visit" className="btn btn-outline">Book Now</Link>
               </div>
             </div>
           </section>

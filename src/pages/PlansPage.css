@@ -409,58 +409,7 @@
   margin: 0;
 }
 
-/* Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-}
 
-.btn-primary {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.btn-secondary {
-  background: var(--accent);
-  color: white;
-}
-
-.btn-secondary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.btn-outline {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--accent);
-  color: white;
-}
-
-.btn-large {
-  font-size: 16px;
-  padding: 14px 28px;
-}
 
 /* Plans CTA */
 .plans-cta {
